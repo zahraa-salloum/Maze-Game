@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded",function(event){
     click_start.addEventListener("click", clickStart);
     click_start.addEventListener("mouseover",hoverStart)
     var hit_boundary = document.getElementsByClassName("boundary");
-    for (var i = 0; i < hit_boundary.length; i++){
+    for (var i = 0; i < hit_boundary.length-1; i++){
         hit_boundary[i].addEventListener("mouseover",hitBoundary);
         }
     var hit_end = document.getElementById("end");
@@ -21,7 +21,7 @@ function hitBoundary() {
     status_text.innerHTML= "You Lost (if hit was after a win or before hovering over S no points are deducted)";
     hit_wall = true;
     var all_boundaries = document.getElementsByClassName("boundary");
-    for (var i = 0; i < all_boundaries.length; i++) {
+    for (var i = 0; i < all_boundaries.length-1; i++) {
         all_boundaries[i].classList.add("youlose");
     }
 }
@@ -34,7 +34,7 @@ function hoverStart(){
     var status_text = document.getElementById("status");
     status_text.innerHTML= "Your Score is "+score;
     var all_boundaries = document.getElementsByClassName("boundary");
-    for (var i = 0; i < all_boundaries.length; i++) {
+    for (var i = 0; i < all_boundaries.length-1; i++) {
         all_boundaries[i].classList.remove("youlose");
     }
 }
@@ -46,7 +46,7 @@ function clickStart() {
     var status_text = document.getElementById("status");
     status_text.innerHTML= "Begin by moving your mouse over the 'S'.";
     var all_boundaries = document.getElementsByClassName("boundary");
-    for (var i = 0; i < all_boundaries.length; i++) {
+    for (var i = 0; i < all_boundaries.length-1; i++) {
         all_boundaries[i].classList.remove("youlose");
     }
 }
